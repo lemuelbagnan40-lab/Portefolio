@@ -1,0 +1,56 @@
+.services-container {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: transparent;
+}
+
+.services-container h2 {
+  color: #12c496;
+  margin-bottom: 40px;
+  font-size: 32px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px rgba(0, 223, 154, 0.5);
+  display: inline-block;
+  border-bottom: 3px solid #12c496;
+  padding-bottom: 8px;
+  border-radius: 2px;
+}
+
+.services-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.card {
+  flex: 0 0 calc(30% - 20px);
+  min-height: 150px;
+  padding: 25px;
+  background-color: #222630;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  box-sizing: border-box;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 223, 154, 0.2);
+}
+
+.card h3 {
+  border-bottom: 2px solid #04aa6d;
+  margin-bottom: 15px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 223, 154, 0.4);
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex: 0 0 100%;
+  }
+}
