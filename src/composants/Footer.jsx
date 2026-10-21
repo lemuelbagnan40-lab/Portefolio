@@ -1,4 +1,5 @@
 import "../styles/Footer.css";
+import { useState } from "react";
 
 import whatsapp from "../assets/whatsapp.svg";
 import gmail from "../assets/new.svg";
@@ -6,36 +7,59 @@ import linkd from "../assets/linkedin.svg";
 import git from "../assets/logo.svg";
 
 function Footer() {
-  const time = () => {
-    return new Date().getFullYear();
-  };
+  const year = new Date().getFullYear();
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
-  const name = () => {
-    return "Bagnan Lemuel";
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const subject = encodeURIComponent("Projet portfolio");
+    const body = encodeURIComponent(`Mon e-mail : ${email}\n\n${message}`);
+    window.location.href = `mailto:bagnandeljes@gmail.com?subject=${subject}&body=${body}`;
   };
 
   return (
-    <footer>
+    <footer id="Contact">
+      <p className="footer-invitation">Un projet en tête ? Échangeons.</p>
+      <form className="contact-form" onSubmit={handleSubmit}>
+        <label htmlFor="contact-email">Votre e-mail</label>
+        <input
+          id="contact-email"
+          name="email"
+          type="email"
+          autoComplete="email"
+          placeholder="vous@exemple.com"
+          value={email}
+          onChange={(event) => setEmail(event.target.value)}
+          required
+        />
+        <label htmlFor="contact-message">Votre message</label>
+        <textarea
+          id="contact-message"
+          name="message"
+          placeholder="Parlez-moi de votre projet…"
+          rows="5"
+          value={message}
+          onChange={(event) => setMessage(event.target.value)}
+          required
+        />
+        <button type="submit">Envoyer le message</button>
+      </form>
       <div className="footer-links">
-        <a href="https://wa.me/+22673308997" target="_blank">
+        <a href="https://wa.me/22673308997" target="_blank" rel="noreferrer" aria-label="Contacter Lemuel sur WhatsApp">
           <img src={whatsapp} alt="" />
         </a>
-        <a href="https://bagnandeljes@gmail.com" target="_blank">
+        <a href="mailto:bagnandeljes@gmail.com" aria-label="Envoyer un e-mail à Lemuel">
           <img src={gmail} alt="" />
         </a>
-        <a
-          href="https://www.linkedin.com/in/lemuel-bagnan-b89828409"
-          target="_blank"
-        >
+        <a href="https://www.linkedin.com/in/lemuel-bagnan-b89828409" target="_blank" rel="noreferrer" aria-label="Profil LinkedIn de Lemuel">
           <img src={linkd} alt="" />
         </a>
-        <a href="https://github.com/lemuelbagnan40-lab" target="_blank">
+        <a href="https://github.com/lemuelbagnan40-lab" target="_blank" rel="noreferrer" aria-label="Profil GitHub de Lemuel">
           <img src={git} alt="" />
         </a>
       </div>
-      <p className="footer-copy">
-        &copy; {time()}. {name()} Tous droits réservés.
-      </p>
+      <p className="footer-copy">&copy; {year} Bagnan Lemuel. Tous droits réservés.</p>
     </footer>
   );
 }

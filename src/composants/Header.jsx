@@ -1,32 +1,52 @@
+import { useState } from "react";
 import "../styles/Header.css";
+import DownloadCvButton from "./DownloadCvButton";
+
+const links = [
+  ["Accueil", "#Home"],
+  ["À propos", "#About"],
+  ["Compétences", "#Skills"],
+  ["Services", "#Services"],
+  ["Contact", "#Contact"],
+];
 
 function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const closeMenu = () => setMenuOpen(false);
+
   return (
-    <>
-      {/*barre de navigation du portefolio*/}
-      <header>
-        <div className="logo">
-          <h1>Lemuel.</h1>
-        </div>
-        <nav>
-          <a href="#" className="nav-link">
-            Home
+    <header className="site-header">
+      <a className="logo" href="#Home" onClick={closeMenu} aria-label="Lemuel, accueil">
+        Lemuel<span>.</span>
+      </a>
+
+      <button
+        className="menu-toggle"
+        type="button"
+        aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"}
+        aria-expanded={menuOpen}
+        aria-controls="primary-navigation"
+        onClick={() => setMenuOpen((open) => !open)}
+      >
+        <span />
+        <span />
+        <span />
+      </button>
+
+      <nav
+        id="primary-navigation"
+        className={`primary-navigation${menuOpen ? " is-open" : ""}`}
+        aria-label="Navigation principale"
+      >
+        {links.map(([label, href]) => (
+          <a className="nav-link" href={href} key={href} onClick={closeMenu}>
+            {label}
           </a>
-          <a href="#About" className="nav-link">
-            About
-          </a>
-          <a href="#Skills" className="nav-link">
-            Skills
-          </a>
-          <a href="#Services" className="nav-link">
-            Services
-          </a>
-          <a href="#Contact" className="nav-link">
-            Contact
-          </a>
-        </nav>
-      </header>
-    </>
+        ))}
+        <DownloadCvButton onClick={closeMenu} />
+      </nav>
+    </header>
   );
 }
 

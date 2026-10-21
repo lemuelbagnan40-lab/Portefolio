@@ -8,9 +8,11 @@ function Home() {
   return (
     <>
       <Header />
-      <About />
-      <Services />
-      <Skills />
+      <main id="Home">
+        <About />
+        <Services />
+        <Skills />
+      </main>
       <Footer />
     </>
   );

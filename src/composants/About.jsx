@@ -4,26 +4,28 @@ import avatarImg from "../assets/avatar.jpg";
 function About() {
   return (
     <>
-      <section className="about-container">
+      <section id="About" className="about-container">
         <div className="about-hero">
           <div className="about-img">
-            <img src={avatarImg} alt="Lemuel picture" />
+            <img src={avatarImg} alt="Portrait de Bagnan Lemuel" />
           </div>
           <div className="about-text">
             <h2>
-              Salut, c'est <span className="highlight">LEMUEL</span>
+              Salut, moi c’est <span className="highlight">Lemuel</span>
             </h2>
             <h3 className="typed-css">
               Je suis <span></span>
             </h3>
             <p>
-              Je suis BAGNAN LEMUEL developpeur web front-end passionne
-              d'informatique et qui a envie de construire de belle chose.
+              Je suis Bagnan Lemuel, développeur front-end passionné par le web
+              et la création d’expériences simples, utiles et agréables à
+              utiliser.
             </p>
             <p>
-              Je propose des services plus fiable, adapter a toute les
-              plateformes avec des visuels attractif.
+              Je conçois des sites modernes, accessibles et adaptés à tous les
+              écrans, ainsi que des visuels pour mettre vos projets en valeur.
             </p>
+            <a className="about-contact" href="#Contact">Parlons de votre projet <span aria-hidden="true">→</span></a>
           </div>
         </div>
       </section>

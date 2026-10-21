@@ -8,8 +8,8 @@ import reactIcon from "../assets/react.svg";
 function Skills() {
   return (
     <>
-      <section className="skills-section">
-        <h2>Mes Competences</h2>
+      <section id="Skills" className="skills-section">
+        <h2>Mes compétences</h2>
         <div className="skills-grid">
           <div className="skills-card">
             <div className="skill-icon-wrapper">
