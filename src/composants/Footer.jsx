@@ -20,7 +20,8 @@ function Footer() {
 
   return (
     <footer id="Contact">
-      <p className="footer-invitation">Un projet en tête ? Échangeons.</p>
+      <h2 className="footer-invitation">On en parle ?</h2>
+      <p className="footer-intro">Décrivez-moi votre idée, même si elle n’est pas encore tout à fait définie. Je vous répondrai avec plaisir.</p>
       <form className="contact-form" onSubmit={handleSubmit}>
         <label htmlFor="contact-email">Votre e-mail</label>
         <input
@@ -37,13 +38,13 @@ function Footer() {
         <textarea
           id="contact-message"
           name="message"
-          placeholder="Parlez-moi de votre projet…"
+          placeholder="Qu’aimeriez-vous créer ?"
           rows="5"
           value={message}
           onChange={(event) => setMessage(event.target.value)}
           required
         />
-        <button type="submit">Envoyer le message</button>
+        <button type="submit">Envoyer mon message <span aria-hidden="true">→</span></button>
       </form>
       <div className="footer-links">
         <a href="https://wa.me/22673308997" target="_blank" rel="noreferrer" aria-label="Contacter Lemuel sur WhatsApp">

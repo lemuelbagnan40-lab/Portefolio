@@ -5,6 +5,7 @@ function Services() {
     <>
       <section id="Services" className="services-container">
         <h2>Mes services</h2>
+        <p className="section-intro">Un coup de main, de l’idée jusqu’aux finitions.</p>
         <div className="services-card">
           <div className="card">
             <h3>Sites vitrines</h3>

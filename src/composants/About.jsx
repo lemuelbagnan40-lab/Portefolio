@@ -10,6 +10,7 @@ function About() {
             <img src={avatarImg} alt="Portrait de Bagnan Lemuel" />
           </div>
           <div className="about-text">
+            <p className="about-eyebrow">Développeur front-end · Burkina Faso</p>
             <h2>
               Salut, moi c’est <span className="highlight">Lemuel</span>
             </h2>
@@ -17,13 +18,13 @@ function About() {
               Je suis <span></span>
             </h3>
             <p>
-              Je suis Bagnan Lemuel, développeur front-end passionné par le web
-              et la création d’expériences simples, utiles et agréables à
-              utiliser.
+              J’aime donner vie aux idées en créant des sites web simples,
+              utiles et agréables à utiliser. Je m’appelle Bagnan Lemuel, et je
+              travaille surtout sur ce que vous voyez et utilisez à l’écran.
             </p>
             <p>
-              Je conçois des sites modernes, accessibles et adaptés à tous les
-              écrans, ainsi que des visuels pour mettre vos projets en valeur.
+              Que vous partiez d’une idée ou d’une maquette, je peux vous aider
+              à créer un site adapté à vos visiteurs et à tous les écrans.
             </p>
             <a className="about-contact" href="#Contact">Parlons de votre projet <span aria-hidden="true">→</span></a>
           </div>

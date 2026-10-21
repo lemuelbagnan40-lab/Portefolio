@@ -16,6 +16,13 @@
   letter-spacing: 0.07em;
 }
 
+.section-intro {
+  margin: -16px auto 28px;
+  color: #aeb7c4;
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
 .services-card {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));

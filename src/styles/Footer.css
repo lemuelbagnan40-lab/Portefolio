@@ -7,10 +7,18 @@ footer {
 }
 
 .footer-invitation {
-  margin-bottom: 16px;
-  color: #e0e6ed;
-  font-size: 1.05rem;
-  font-weight: 600;
+  margin-bottom: 8px;
+  color: #fff;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  letter-spacing: -0.035em;
+}
+
+.footer-intro {
+  width: min(100%, 48ch);
+  margin: 0 auto 22px;
+  color: #aeb7c4;
+  font-size: 0.94rem;
+  line-height: 1.7;
 }
 
 .contact-form {
@@ -67,10 +75,20 @@ footer {
   transition: color 180ms ease, background-color 180ms ease;
 }
 
+.contact-form button span {
+  display: inline-block;
+  margin-left: 6px;
+  transition: transform 180ms ease;
+}
+
 .contact-form button:hover,
 .contact-form button:focus-visible {
   color: #12c496;
   background: #222630;
+}
+
+.contact-form button:hover span {
+  transform: translateX(3px);
 }
 
 .contact-form button:focus-visible {
@@ -90,23 +108,25 @@ footer {
   width: 40px;
   height: 40px;
   place-items: center;
-  color: #12c496;
-  border: 1px solid rgba(18, 196, 150, 0.2);
-  border-radius: 50%;
-  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+  color: #e0e6ed;
+  background: rgba(18, 196, 150, 0.07);
+  border: 1px solid rgba(18, 196, 150, 0.22);
+  border-radius: 12px;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, box-shadow 180ms ease;
 }
 
 .footer-links img {
-  width: 20px;
-  height: 20px;
+  width: 19px;
+  height: 19px;
   object-fit: contain;
-  filter: drop-shadow(0 0 4px rgba(0, 223, 152, 0.3));
+  filter: brightness(0) invert(1);
 }
 
 .footer-links a:hover {
-  background: rgba(18, 196, 150, 0.08);
-  border-color: rgba(18, 196, 150, 0.6);
-  transform: translateY(-2px);
+  background: rgba(18, 196, 150, 0.16);
+  border-color: rgba(18, 196, 150, 0.62);
+  box-shadow: 0 6px 18px rgba(18, 196, 150, 0.1);
+  transform: translateY(-3px);
 }
 
 .footer-copy {
@@ -121,6 +141,10 @@ footer {
   }
 
   .contact-form button {
+    transition: none;
+  }
+
+  .contact-form button span {
     transition: none;
   }
 }

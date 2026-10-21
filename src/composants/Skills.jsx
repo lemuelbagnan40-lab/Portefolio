@@ -10,6 +10,7 @@ function Skills() {
     <>
       <section id="Skills" className="skills-section">
         <h2>Mes compétences</h2>
+        <p className="section-intro">Les outils que j’utilise pour donner vie à vos idées.</p>
         <div className="skills-grid">
           <div className="skills-card">
             <div className="skill-icon-wrapper">
