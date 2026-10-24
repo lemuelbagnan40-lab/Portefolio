@@ -7,8 +7,9 @@ import Footer from "../composants/Footer";
 function Home() {
   return (
     <>
+      <a className="skip-link" href="#Home">Aller au contenu</a>
       <Header />
-      <main id="Home">
+      <main id="Home" tabIndex="-1">
         <About />
         <Services />
         <Skills />

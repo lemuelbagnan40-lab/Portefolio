@@ -4,34 +4,95 @@
 @import "styles/Services.css";
 @import "styles/Skills.css";
 @import "styles/Footer.css";
+@import "styles/Formulaire.css";
 
-* {
-  margin: 0;
-  padding: 0;
+:root {
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  color: #dbe5de;
+  background: #111815;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --bg: #111815;
+  --surface: #151e19;
+  --card: #19231d;
+  --card-hover: #1d2a23;
+  --accent: #12c496;
+  --text-strong: #f2f4ef;
+  --text-muted: #b0bdb4;
+  --line: rgba(223, 235, 226, 0.1);
+  --content-width: 1120px;
+}
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
-  text-decoration: none;
-  border: none;
 }
 
 html {
+  min-width: 320px;
   scroll-behavior: smooth;
+  scroll-padding-top: 88px;
 }
 
 body {
-  width: 100%;
-  max-width: 100%;
+  min-width: 320px;
   min-height: 100vh;
+  margin: 0;
   overflow-x: hidden;
-  background:
-    radial-gradient(ellipse at 15% 10%, rgba(18, 196, 150, 0.055), transparent 32rem),
-    #1a1d24;
-  color: #e0e6ed;
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: #dbe5de;
+  font-size: 16px;
   line-height: 1.5;
 }
 
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 50;
+  top: 12px;
+  left: 12px;
+  padding: 10px 14px;
+  color: #07150f;
+  background: var(--accent);
+  border-radius: 6px;
+  transform: translateY(-160%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+::selection {
+  color: #07150f;
+  background: var(--accent);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
