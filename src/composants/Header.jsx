@@ -3,6 +3,7 @@ import DownloadCvButton from "./DownloadCvButton";
 
 const navigationLinks = [
   { label: "Accueil", href: "#Home" },
+  { label: "Projets", href: "#Projects" },
   { label: "Services", href: "#Services" },
   { label: "Compétences", href: "#Skills" },
   { label: "Contact", href: "#Contact" },
@@ -14,7 +15,7 @@ function Header() {
   const toggleButton = useRef(null);
 
   useEffect(() => {
-    const sectionIds = ["About", "Services", "Skills", "Contact"];
+    const sectionIds = ["About", "Projects", "Services", "Skills", "Contact"];
 
     const sections = sectionIds
       .map((sectionId) => document.getElementById(sectionId))
