@@ -1,10 +1,20 @@
 const projects = [
   {
-    name: "schoolweb",
+    name: "SchoolWeb",
+    type: "Plateforme d'apprentissage",
+    role: "Conception & Développement Frontend",
     description:
-      "Une plateforme francophone pour apprendre HTML, CSS et JavaScript par la pratique, avec des parcours, des leçons et des exercices interactifs.",
+      "Plateforme francophone pour apprendre HTML, CSS et JavaScript par la pratique, avec des parcours structurés, des leçons et des exercices interactifs.",
+    context:
+      "Créer un parcours clair et progressif à destination des débutants francophones.",
+    highlights: [
+      "Parcours interactifs et progressifs",
+      "Navigation fluide et responsive",
+      "Pensé pour l'apprentissage par la pratique",
+    ],
     technologies: ["SvelteKit", "Svelte 5", "JavaScript", "CSS"],
     liveUrl: "https://lemuelbagnan40-lab.github.io/schoolweb/",
+    githubUrl: "https://github.com/lemuelbagnan40-lab/schoolweb",
     logoUrl:
       "https://lemuelbagnan40-lab.github.io/schoolweb/logo-webschool.svg",
   },

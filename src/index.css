@@ -8,7 +8,7 @@
 @import "styles/Formulaire.css";
 
 :root {
-  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
   color: #dbe5de;
   background: #111815;
   font-synthesis: none;
@@ -21,7 +21,9 @@
   --card: #19231d;
   --card-hover: #1d2a23;
   --accent: #12c496;
+  --accent-hover: #3ad7aa;
   --text-strong: #f2f4ef;
+  --text-primary: #e6ece8;
   --text-muted: #b0bdb4;
   --line: rgba(223, 235, 226, 0.1);
   --content-width: 1120px;
@@ -44,10 +46,11 @@ body {
   min-height: 100vh;
   margin: 0;
   overflow-x: hidden;
-  background: var(--bg);
+  background: radial-gradient(circle at top, rgba(18, 196, 150, 0.08), transparent 55%),
+    var(--bg);
   color: #dbe5de;
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 button,
