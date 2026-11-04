@@ -1,6 +1,6 @@
 const projects = [
   {
-    name: "SchoolWeb",
+    name: "CodeCraft-BF",
     type: "Plateforme d'apprentissage",
     role: "Conception & Développement Frontend",
     description:
@@ -13,10 +13,10 @@ const projects = [
       "Pensé pour l'apprentissage par la pratique",
     ],
     technologies: ["React", "Vite", "JavaScript", "CSS"],
-    liveUrl: "https://lemuelbagnan40-lab.github.io/schoolweb/",
-    githubUrl: "https://github.com/lemuelbagnan40-lab/schoolweb",
+    liveUrl: "https://lemuelbagnan40-lab.github.io/codecraft-bf/",
+    githubUrl: "https://github.com/lemuelbagnan40-lab/codecraft-bf",
     logoUrl:
-      "https://lemuelbagnan40-lab.github.io/schoolweb/logo-webschool.svg",
+      "https://lemuelbagnan40-lab.github.io/codecraft-bf/logo-webschool.svg",
   },
 ];
 
