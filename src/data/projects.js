@@ -12,7 +12,7 @@ const projects = [
       "Navigation fluide et responsive",
       "Pensé pour l'apprentissage par la pratique",
     ],
-    technologies: ["SvelteKit", "Svelte 5", "JavaScript", "CSS"],
+    technologies: ["React", "Vite", "JavaScript", "CSS"],
     liveUrl: "https://lemuelbagnan40-lab.github.io/schoolweb/",
     githubUrl: "https://github.com/lemuelbagnan40-lab/schoolweb",
     logoUrl:
