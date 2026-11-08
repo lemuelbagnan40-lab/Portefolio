@@ -1,10 +1,13 @@
+import cvUrl from "../assets/cv/CV_BAGNAN_2026.pdf?url";
+
 function DownloadCvButton({ onClick }) {
   return (
     <a
       className="cv-download"
-      href="mailto:bagnandeljes@gmail.com?subject=Demande%20de%20CV"
+      href={cvUrl}
+      download="CV_BAGNAN_2026.pdf"
       onClick={onClick}
-      aria-label="Demander le CV de Lemuel par e-mail"
+      aria-label="Télécharger le CV de Lemuel"
     >
       Demander mon CV <span aria-hidden="true">↗</span>
     </a>

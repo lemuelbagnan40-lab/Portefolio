@@ -31,15 +31,31 @@ function Skills() {
         </p>
       </div>
 
-      <div className="skills-marquee reveal-on-scroll" aria-label="Compétences en défilement">
+      <div className="skills-marquee-caption" aria-hidden="true">
+        <span>Ma boîte à outils</span>
+        <span>{String(skills.length).padStart(2, "0")} technologies</span>
+      </div>
+      <div
+        className="skills-marquee"
+        role="region"
+        aria-label="Compétences techniques en défilement"
+      >
         <div className="skills-marquee-track">
-          {[...skills, ...skills].map((skill, index) => (
-            <div className="skills-pill" key={`${skill.name}-${index}`}>
-              <span className="skills-pill-icon" aria-hidden="true">
-                <img src={skill.icon} alt="" className="skills-pill-img" />
-              </span>
-              <span className="skills-pill-label">{skill.name}</span>
-            </div>
+          {[false, true].map((isDuplicate) => (
+            <ul
+              className="skills-marquee-set"
+              key={isDuplicate ? "duplicate" : "skills"}
+              aria-hidden={isDuplicate || undefined}
+            >
+              {skills.map((skill) => (
+                <li className="skills-pill" key={skill.name}>
+                  <span className="skills-pill-icon" aria-hidden="true">
+                    <img src={skill.icon} alt="" className="skills-pill-img" />
+                  </span>
+                  <span className="skills-pill-label">{skill.name}</span>
+                </li>
+              ))}
+            </ul>
           ))}
         </div>
       </div>

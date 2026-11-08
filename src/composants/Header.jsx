@@ -3,6 +3,7 @@ import DownloadCvButton from "./DownloadCvButton";
 
 const navigationLinks = [
   { label: "Accueil", href: "#Home" },
+  { label: "À propos", href: "#Approach" },
   { label: "Projets", href: "#Projects" },
   { label: "Services", href: "#Services" },
   { label: "Compétences", href: "#Skills" },
@@ -15,7 +16,7 @@ function Header() {
   const toggleButton = useRef(null);
 
   useEffect(() => {
-    const sectionIds = ["About", "Projects", "Services", "Skills", "Contact"];
+    const sectionIds = ["About", "Approach", "Projects", "Services", "Skills", "Contact"];
 
     const sections = sectionIds
       .map((sectionId) => document.getElementById(sectionId))
@@ -65,7 +66,8 @@ function Header() {
         onClick={closeMenu}
         aria-label="Lemuel, accueil"
       >
-        Lemuel<span>.</span>
+        <span className="logo-name">Lemuel<span>.</span></span>
+        <span className="logo-caption">Développeur frontend</span>
       </a>
 
       <button
