@@ -1,4 +1,4 @@
-import avatarImg from "../assets/IMG-20261022-WA0036.jpg";
+import avatarImg from "../assets/portrait-professionnel.jpg";
 
 const approach = [
   {
@@ -52,7 +52,7 @@ function About() {
               src={avatarImg}
               alt="Portrait de Bagnan Lemuel, développeur frontend"
               width="960"
-              height="1280"
+              height="1200"
               loading="eager"
               fetchPriority="high"
               decoding="async"
