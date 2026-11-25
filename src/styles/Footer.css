@@ -137,8 +137,8 @@
 .footer-links a:hover,
 .footer-links a:focus-visible {
   color: var(--text-strong);
-  background: rgba(18, 196, 150, 0.08);
-  border-color: rgba(18, 196, 150, 0.6);
+  background: rgba(217, 102, 59, 0.06);
+  border-color: rgba(217, 102, 59, 0.4);
 }
 
 .footer-links a:focus-visible {
@@ -190,6 +190,12 @@
 
 .footer-copy {
   margin: 0;
+}
+
+.footer-links a:hover,
+.footer-links a:focus-visible {
+  background: rgba(217, 102, 59, 0.06);
+  border-color: rgba(217, 102, 59, 0.4);
 }
 
 @media (max-width: 760px) {

@@ -9,23 +9,23 @@
 
 :root {
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-  color: #e5e5e5;
-  background: #111815;
+  color: #252421;
+  background: #d7d5d0;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --bg: #0a0a0a;
-  --surface: #111111;
-  --card: #161616;
-  --card-hover: #1c1c1c;
-  --accent: #ffffff;
-  --accent-hover: #d4d4d4;
-  --text-strong: #fafafa;
-  --text-primary: #e5e5e5;
-  --text-muted: #a3a3a3;
-  --line: rgba(255, 255, 255, 0.08);
+  --bg: #faf9f6;
+  --surface: #f3f1ec;
+  --card: #fffefa;
+  --card-hover: #ffffff;
+  --accent: #d9663b;
+  --accent-hover: #e9784e;
+  --text-strong: #191918;
+  --text-primary: #363532;
+  --text-muted: #77756f;
+  --line: rgba(34, 32, 29, 0.12);
   --content-width: 1120px;
 }
 
@@ -46,10 +46,24 @@ body {
   min-height: 100vh;
   margin: 0;
   overflow-x: hidden;
-  background: var(--bg);
-  color: #e5e5e5;
+  background-color: #d7d5d0;
+  background-image:
+    radial-gradient(ellipse at 18% 24%, rgba(255, 255, 255, 0.42), transparent 38%),
+    radial-gradient(ellipse at 84% 78%, rgba(87, 83, 75, 0.12), transparent 44%);
+  color: var(--text-primary);
   font-size: 16px;
   line-height: 1.6;
+}
+
+.portfolio-shell {
+  position: relative;
+  width: min(calc(100% - 28px), 1540px);
+  min-height: 100vh;
+  margin-inline: auto;
+  overflow: clip;
+  background: var(--bg);
+  border-inline: 12px solid rgba(255, 255, 255, 0.78);
+  box-shadow: 0 20px 70px rgba(34, 32, 29, 0.13);
 }
 
 button,
@@ -69,7 +83,7 @@ a {
   top: 12px;
   left: 12px;
   padding: 10px 14px;
-  color: #07150f;
+  color: #191918;
   background: var(--accent);
   border-radius: 6px;
   transform: translateY(-160%);
@@ -80,7 +94,7 @@ a {
 }
 
 ::selection {
-  color: #07150f;
+  color: #fff;
   background: var(--accent);
 }
 

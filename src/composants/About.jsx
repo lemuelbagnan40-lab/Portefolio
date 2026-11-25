@@ -1,4 +1,4 @@
-import avatarImg from "../assets/portrait-professionnel.jpg";
+import avatarImg from "../assets/portrait-professionnel-detoure.png";
 
 const approach = [
   {
@@ -23,11 +23,31 @@ function About() {
     <>
       <section id="About" className="about-container" aria-labelledby="hero-title">
         <div className="about-hero">
-          <div className="about-text">
-            <p className="about-eyebrow">Développeur Frontend · Burkina Faso</p>
-            <h1 id="hero-title">
-              Je crée des expériences web <span className="highlight">claires et accessibles.</span>
+          <div className="hero-portrait-stage">
+            <p className="hero-status">
+              <span aria-hidden="true" />
+              Création web · Burkina Faso
+            </p>
+            <h1 id="hero-title" className="hero-nameplate">
+              <span>BAGNAN</span> <strong>LEMUEL</strong>
             </h1>
+            <div className="about-img">
+              <img
+                src={avatarImg}
+                alt="Portrait de Bagnan Lemuel, développeur frontend"
+                width="960"
+                height="1200"
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+              />
+            </div>
+          </div>
+          <div className="about-text">
+            <p className="about-eyebrow">Frontend · Burkina Faso</p>
+            <h2>
+              Des idées prennent vie, <span className="highlight">pixel après pixel.</span>
+            </h2>
             <p className="about-role">Bonjour, moi c’est Bagnan Lemuel.</p>
             <p>
               Je transforme des idées et des maquettes en interfaces soignées,
@@ -46,22 +66,6 @@ function About() {
               <li>React · JavaScript</li>
               <li>Responsive</li>
             </ul>
-          </div>
-          <div className="about-img">
-            <img
-              src={avatarImg}
-              alt="Portrait de Bagnan Lemuel, développeur frontend"
-              width="960"
-              height="1200"
-              loading="eager"
-              fetchPriority="high"
-              decoding="async"
-            />
-            <div className="about-img-caption">
-              <span className="about-img-caption-label">Portfolio</span>
-              <span className="about-img-caption-name">Bagnan Lemuel</span>
-              <span className="about-img-caption-role">Développeur frontend</span>
-            </div>
           </div>
         </div>
         <span className="hero-index" aria-hidden="true">Portfolio · 2026</span>

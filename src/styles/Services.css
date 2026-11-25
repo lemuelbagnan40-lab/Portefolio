@@ -54,7 +54,7 @@
 
 .card:hover {
   background: var(--card-hover);
-  border-color: rgba(18, 196, 150, 0.52);
+  border-color: rgba(217, 102, 59, 0.42);
   transform: translateY(-3px);
 }
 
@@ -79,6 +79,14 @@
   color: var(--text-muted);
   font-size: 0.92rem;
   line-height: 1.65;
+}
+
+.services-container {
+  background: #f4f2ed;
+}
+
+.card:hover {
+  border-color: rgba(217, 102, 59, 0.42);
 }
 
 @media (max-width: 760px) {

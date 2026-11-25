@@ -36,7 +36,7 @@ function Home() {
   }, []);
 
   return (
-    <>
+    <div className="portfolio-shell">
       <a className="skip-link" href="#Home">
         Aller au contenu
       </a>
@@ -48,7 +48,7 @@ function Home() {
         <Skills />
       </main>
       <Footer />
-    </>
+    </div>
   );
 }
 

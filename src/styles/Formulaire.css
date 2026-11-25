@@ -63,8 +63,8 @@
 .contact-form textarea:focus-visible {
   border-color: var(--accent);
   outline: none;
-  background: #111815;
-  box-shadow: 0 0 0 3px rgba(18, 196, 150, 0.15);
+  background: #fffefa;
+  box-shadow: 0 0 0 3px rgba(217, 102, 59, 0.14);
 }
 
 .contact-form button {
@@ -75,7 +75,7 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  color: #07150f;
+  color: #fff;
   background: var(--accent);
   border: 1px solid var(--accent);
   border-radius: 8px;
@@ -86,7 +86,7 @@
 
 .contact-form button:hover {
   background: var(--accent-hover);
-  box-shadow: 0 10px 24px -16px rgba(18, 196, 150, 0.9);
+  box-shadow: 0 10px 24px -16px rgba(217, 102, 59, 0.34);
   transform: translateY(-2px);
 }
 
@@ -95,6 +95,30 @@
   color: var(--text-muted);
   font-size: 0.79rem;
   line-height: 1.5;
+}
+
+.contact-form input,
+.contact-form textarea {
+  color: var(--text-strong);
+  background: #faf9f6;
+  border-color: rgba(34, 32, 29, 0.16);
+}
+
+.contact-form input:focus-visible,
+.contact-form textarea:focus-visible {
+  background: #fffefa;
+  box-shadow: 0 0 0 3px rgba(217, 102, 59, 0.14);
+}
+
+.contact-form button {
+  color: #fff;
+  background: #191918;
+  border-color: #191918;
+}
+
+.contact-form button:hover {
+  color: #fff;
+  background: #353431;
 }
 
 @media (max-width: 480px) {
