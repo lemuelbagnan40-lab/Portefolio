@@ -74,17 +74,6 @@ function Projects() {
                     Voir le projet <span aria-hidden="true">↗</span>
                   </a>
                 )}
-                {project.githubUrl && (
-                  <a
-                    className="project-link--secondary"
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <span className="project-link-secondary">Voir le code</span>
-                    <span aria-hidden="true">↗</span>
-                  </a>
-                )}
               </div>
             </div>
           </article>
