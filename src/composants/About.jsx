@@ -1,4 +1,4 @@
-import avatarImg from "../assets/portrait-professionnel-detoure.png";
+import avatarImg from "../assets/portrait-professionnel-detoure.webp";
 
 const approach = [
   {
@@ -12,9 +12,9 @@ const approach = [
       "Penser les usages mobile, tablette et ordinateur dès la conception.",
   },
   {
-    title: "Soigner l’expérience",
+    title: "Optimiser l’expérience utilisateur",
     description:
-      "Porter attention à la lisibilité, à l’accessibilité et aux interactions.",
+      "Garantir la lisibilité, l’accessibilité et la qualité des interactions.",
   },
 ];
 
@@ -26,7 +26,7 @@ function About() {
           <div className="hero-portrait-stage">
             <p className="hero-status">
               <span aria-hidden="true" />
-              Création web · Burkina Faso
+              Développement web · Burkina Faso
             </p>
             <h1 id="hero-title" className="hero-nameplate">
               <span>BAGNAN</span> <strong>LEMUEL</strong>
@@ -44,14 +44,16 @@ function About() {
             </div>
           </div>
           <div className="about-text">
-            <p className="about-eyebrow">Frontend · Burkina Faso</p>
+            <p className="about-eyebrow">Développeur frontend · Burkina Faso</p>
             <h2>
-              Des idées prennent vie, <span className="highlight">pixel après pixel.</span>
+              Des interfaces web claires,{" "}
+              <span className="highlight">fiables et accessibles.</span>
             </h2>
-            <p className="about-role">Bonjour, moi c’est Bagnan Lemuel.</p>
+            <p className="about-role">Bonjour, je suis Bagnan Lemuel.</p>
             <p>
-              Je transforme des idées et des maquettes en interfaces soignées,
-              adaptées à tous les écrans et simples à utiliser.
+              J’intègre des maquettes et développe des interfaces React adaptées
+              à tous les écrans, avec une attention particulière portée à
+              l’accessibilité et à la performance.
             </p>
             <div className="about-actions">
               <a className="button-link button-link--primary" href="#Projects">
@@ -64,7 +66,7 @@ function About() {
             <ul className="hero-meta" aria-label="Profil">
               <li><span aria-hidden="true">●</span> Burkina Faso</li>
               <li>React · JavaScript</li>
-              <li>Responsive</li>
+              <li>Sites adaptatifs</li>
             </ul>
           </div>
         </div>
@@ -76,27 +78,31 @@ function About() {
         className="approach-section"
         aria-labelledby="approach-title"
       >
-        <div className="approach-intro">
+        <div className="approach-intro reveal-on-scroll">
           <p className="section-kicker">À propos de moi</p>
-          <h2 id="approach-title">Je donne forme aux idées, jusque dans les détails.</h2>
+          <h2 id="approach-title">Une méthode claire, du besoin à la livraison.</h2>
           <p>
-            Basé au Burkina Faso, je développe des interfaces frontend avec
-            React et JavaScript. J’aime transformer une idée ou une maquette
-            en expérience web claire, responsive et simple à utiliser.
+            Basé au Burkina Faso, je développe des interfaces avec React et
+            JavaScript. Je transforme une idée ou une maquette en expérience
+            web claire, adaptée à tous les écrans et simple à utiliser.
           </p>
           <p>
-            Mon objectif : créer des interfaces utiles, où le design et le code
-            servent le même parcours.
+            Mon objectif : livrer des interfaces utiles, où le design et le
+            code servent le même parcours utilisateur.
           </p>
           <a className="about-more-link" href="#Projects">
-            Voir comment je travaille <span aria-hidden="true">↗</span>
+            Voir mes réalisations <span aria-hidden="true">↗</span>
           </a>
         </div>
         <div className="approach-details">
-          <p className="approach-details-label">Ma manière d’aborder un projet</p>
+          <p className="approach-details-label">Ma méthode de travail</p>
           <ol className="approach-list">
             {approach.map((item, index) => (
-              <li className="approach-item" key={item.title}>
+              <li
+                className="approach-item reveal-on-scroll"
+                key={item.title}
+                style={{ "--reveal-delay": `${index * 90}ms` }}
+              >
                 <span className="approach-number" aria-hidden="true">
                   {String(index + 1).padStart(2, "0")}
                 </span>

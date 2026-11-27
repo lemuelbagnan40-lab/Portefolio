@@ -1,7 +1,7 @@
 .projects-section {
   padding: clamp(76px, 10vw, 120px) 24px;
   background:
-    radial-gradient(ellipse at 82% 38%, rgba(217, 102, 59, 0.04), transparent 38%),
+    radial-gradient(ellipse at 82% 38%, rgba(var(--accent-rgb), 0.04), transparent 38%),
     var(--bg);
 }
 
@@ -33,7 +33,7 @@
 }
 
 .project-card:hover {
-  border-color: rgba(217, 102, 59, 0.42);
+  border-color: rgba(var(--accent-rgb), 0.42);
   box-shadow: 0 38px 90px -58px rgba(34, 32, 29, 0.38);
 }
 
@@ -44,15 +44,15 @@
   padding: clamp(24px, 4vw, 44px);
   place-items: center;
   background:
-    radial-gradient(circle at 50% 42%, rgba(217, 102, 59, 0.12), transparent 54%),
-    #f0eee8;
+    radial-gradient(circle at 50% 42%, rgba(var(--accent-rgb), 0.12), transparent 54%),
+    var(--visual-bg);
 }
 
 .project-window {
   width: min(100%, 430px);
   overflow: hidden;
-  background: #f7faf8;
-  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: var(--window-bg);
+  border: 1px solid var(--shell-border);
   border-radius: 14px;
   box-shadow: 0 34px 70px -38px rgba(0, 0, 0, 0.75);
   transform: rotate(-1.5deg);
@@ -70,8 +70,8 @@
   padding-inline: 12px;
   align-items: center;
   gap: 5px;
-  background: #e7eeea;
-  border-bottom: 1px solid rgba(18, 48, 34, 0.08);
+  background: var(--window-bar-bg);
+  border-bottom: 1px solid var(--window-line);
 }
 
 .project-window-bar > span:not(.project-window-address) {
@@ -97,11 +97,14 @@
   min-width: 120px;
   margin-left: 10px;
   padding: 2px 12px;
-  color: #6a796f;
-  background: rgba(255, 255, 255, 0.75);
+  overflow: hidden;
+  color: var(--window-ink);
+  background: var(--window-field);
   border-radius: 4px;
   font-size: 0.62rem;
   text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .project-window-content {
@@ -110,15 +113,14 @@
   min-height: 310px;
   padding: 46px 24px;
   place-items: center;
-  background:
-    radial-gradient(circle at center, #fff 0%, #eef5f1 75%);
+  background: radial-gradient(circle at center, var(--window-bg) 0%, var(--window-edge) 75%);
 }
 
 .project-window-content::before,
 .project-window-content::after {
   position: absolute;
   content: "";
-  border: 1px solid rgba(17, 83, 58, 0.12);
+  border: 1px solid var(--window-line);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -136,7 +138,7 @@
 .project-visual-label,
 .project-visual-caption {
   position: absolute;
-  color: #315b49;
+  color: var(--window-ink);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.11em;
@@ -161,7 +163,7 @@
   height: auto;
   max-height: 190px;
   object-fit: contain;
-  filter: drop-shadow(0 28px 48px rgba(17, 83, 58, 0.18));
+  filter: drop-shadow(0 28px 48px rgba(47, 106, 208, 0.18));
 }
 
 .project-details {
@@ -174,66 +176,27 @@
 
 .project-type {
   margin: 0 0 8px;
-  color: var(--accent);
+  color: var(--accent-ink);
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.13em;
   text-transform: uppercase;
 }
 
-.project-role {
-  margin: -4px 0 18px;
-  color: #d3ddd6;
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-
 .project-details h3 {
   margin: 0 0 12px;
   color: var(--text-strong);
-}
-
-.project-visual {
-  background:
-    radial-gradient(circle at 50% 42%, rgba(217, 102, 59, 0.12), transparent 54%),
-    #f0eee8;
-}
-
-.project-card {
-  box-shadow: 0 32px 80px -58px rgba(34, 32, 29, 0.3);
-}
-
-.project-highlights li::before {
-  box-shadow: 0 0 0 4px rgba(217, 102, 59, 0.1);
-}
-
-.project-technologies li {
-  color: #704b3d;
-  background: rgba(217, 102, 59, 0.08);
-  border-color: rgba(217, 102, 59, 0.2);
-}
-
-.project-links a {
-  color: #fff;
-  background: #191918;
-  border-color: #191918;
-}
-
-.project-links a:hover,
-.project-links a:focus-visible {
-  color: #fff;
-  background: #353431;
-  border-color: #353431;
-}
-
-.project-links a.project-link--secondary:hover {
-  color: var(--accent);
-  background: rgba(217, 102, 59, 0.06);
-  border-color: rgba(217, 102, 59, 0.42);
   font-size: clamp(2.3rem, 4vw, 3.5rem);
   font-weight: 700;
   line-height: 1;
   letter-spacing: -0.07em;
+}
+
+.project-role {
+  margin: -4px 0 18px;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
 .project-description {
@@ -246,13 +209,13 @@
 
 .project-context {
   display: grid;
-  margin: 0;
+  margin: 0 0 16px;
   padding: 14px 16px;
   gap: 4px;
   color: var(--text-muted);
   font-size: 0.9rem;
   line-height: 1.6;
-  background: rgba(255, 255, 255, 0.025);
+  background: var(--subtle-bg);
   border-left: 2px solid var(--accent);
   border-radius: 0 7px 7px 0;
 }
@@ -266,7 +229,7 @@
 
 .project-highlights {
   display: grid;
-  margin: 16px 0 0;
+  margin: 0;
   padding: 0;
   gap: 9px;
   list-style: none;
@@ -289,7 +252,7 @@
   content: "";
   background: var(--accent);
   border-radius: 50%;
-  box-shadow: 0 0 0 4px rgba(217, 102, 59, 0.1);
+  box-shadow: 0 0 0 4px rgba(var(--accent-rgb), 0.1);
 }
 
 .project-technologies {
@@ -303,9 +266,9 @@
 
 .project-technologies li {
   padding: 6px 10px;
-  color: #704b3d;
-  background: rgba(217, 102, 59, 0.08);
-  border: 1px solid rgba(217, 102, 59, 0.2);
+  color: var(--accent-ink);
+  background: rgba(var(--accent-rgb), 0.08);
+  border: 1px solid rgba(var(--accent-rgb), 0.2);
   border-radius: 999px;
   font-size: 0.75rem;
   font-weight: 600;
@@ -325,18 +288,19 @@
   padding-inline: 14px;
   align-items: center;
   gap: 7px;
-  color: #fff;
-  background: var(--accent);
-  border: 1px solid var(--accent);
+  color: var(--button-text);
+  background: var(--button-bg);
+  border: 1px solid var(--button-bg);
   border-radius: 7px;
   font-size: 0.88rem;
   font-weight: 700;
-  transition: background-color 160ms ease, transform 160ms ease;
+  transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
 }
 
 .project-links a:hover,
 .project-links a:focus-visible {
-  background: var(--accent-hover);
+  background: var(--button-bg-hover);
+  border-color: var(--button-bg-hover);
   transform: translateY(-1px);
 }
 
@@ -348,8 +312,8 @@
 
 .project-links a.project-link--secondary:hover {
   color: var(--accent);
-  background: rgba(217, 102, 59, 0.06);
-  border-color: rgba(217, 102, 59, 0.42);
+  background: rgba(var(--accent-rgb), 0.06);
+  border-color: rgba(var(--accent-rgb), 0.42);
 }
 
 @media (max-width: 760px) {

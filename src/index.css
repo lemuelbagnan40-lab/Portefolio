@@ -9,24 +9,80 @@
 
 :root {
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-  color: #252421;
-  background: #d7d5d0;
+  color-scheme: light;
+  color: var(--text-primary);
+  background: var(--page-bg);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  --page-bg: #d7d5d0;
   --bg: #faf9f6;
   --surface: #f3f1ec;
+  --surface-alt: #f4f2ed;
   --card: #fffefa;
   --card-hover: #ffffff;
-  --accent: #d9663b;
-  --accent-hover: #e9784e;
+  --subtle-bg: rgba(34, 32, 29, 0.025);
+  --visual-bg: #f0eee8;
+  --window-bg: #f7faf8;
+  --window-bar-bg: #e7eeea;
+  --window-edge: #eef5f1;
+  --window-line: rgba(47, 106, 208, 0.14);
+  --window-ink: #315b49;
+  --window-field: rgba(255, 255, 255, 0.75);
+  --shell-border: rgba(255, 255, 255, 0.78);
+  --input-bg: #faf9f6;
+  --input-border: rgba(34, 32, 29, 0.16);
+  --button-bg: #191918;
+  --button-bg-hover: #353431;
+  --button-text: #fffefa;
+  --accent: #2f6ad0;
+  --accent-rgb: 47, 106, 208;
+  --accent-hover: #1f57b3;
+  --accent-ink: #1d4fa8;
+  --success: #2f7a5b;
+  --github-filter: invert(78%) sepia(72%) saturate(421%) hue-rotate(105deg) brightness(96%) contrast(90%);
   --text-strong: #191918;
   --text-primary: #363532;
-  --text-muted: #77756f;
+  --text-muted: #6b6963;
   --line: rgba(34, 32, 29, 0.12);
   --content-width: 1120px;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --page-bg: #0d0d0c;
+  --bg: #161614;
+  --surface: #1e1e1b;
+  --surface-alt: #1b1b18;
+  --card: #242420;
+  --card-hover: #2b2b27;
+  --subtle-bg: rgba(255, 255, 255, 0.04);
+  --visual-bg: #1f1f1b;
+  --window-bg: #262622;
+  --window-bar-bg: #303029;
+  --window-edge: #1d1d19;
+  --window-line: rgba(126, 169, 232, 0.2);
+  --window-ink: #c3d3e8;
+  --window-field: rgba(255, 255, 255, 0.07);
+  --shell-border: rgba(255, 255, 255, 0.08);
+  --input-bg: #1b1b18;
+  --input-border: rgba(255, 255, 255, 0.16);
+  --button-bg: #f4f2ec;
+  --button-bg-hover: #ffffff;
+  --button-text: #191918;
+  --accent: #7ea9e8;
+  --accent-rgb: 126, 169, 232;
+  --accent-hover: #a3c4f5;
+  --accent-ink: #9dc2f7;
+  --success: #7bd3a6;
+  --github-filter: invert(92%);
+  --text-strong: #f4f2ec;
+  --text-primary: #dedbd3;
+  --text-muted: #a7a49c;
+  --line: rgba(255, 255, 255, 0.14);
 }
 
 *,
@@ -46,7 +102,7 @@ body {
   min-height: 100vh;
   margin: 0;
   overflow-x: hidden;
-  background-color: #d7d5d0;
+  background-color: var(--page-bg);
   background-image:
     radial-gradient(ellipse at 18% 24%, rgba(255, 255, 255, 0.42), transparent 38%),
     radial-gradient(ellipse at 84% 78%, rgba(87, 83, 75, 0.12), transparent 44%);
@@ -62,7 +118,7 @@ body {
   margin-inline: auto;
   overflow: clip;
   background: var(--bg);
-  border-inline: 12px solid rgba(255, 255, 255, 0.78);
+  border-inline: 12px solid var(--shell-border);
   box-shadow: 0 20px 70px rgba(34, 32, 29, 0.13);
 }
 
@@ -83,14 +139,27 @@ a {
   top: 12px;
   left: 12px;
   padding: 10px 14px;
-  color: #191918;
-  background: var(--accent);
+  color: var(--button-text);
+  background: var(--button-bg);
+  border: 2px solid var(--accent);
   border-radius: 6px;
   transform: translateY(-160%);
 }
 
 .skip-link:focus {
   transform: translateY(0);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 ::selection {
@@ -101,6 +170,47 @@ a {
 :focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 4px;
+}
+
+.scroll-progress {
+  position: fixed;
+  z-index: 40;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 2px;
+  pointer-events: none;
+}
+
+.scroll-progress span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--accent);
+  transform: scaleX(var(--scroll-progress, 0));
+  transform-origin: left center;
+  will-change: transform;
+}
+
+.js-ready .reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 620ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 620ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.js-ready .reveal-on-scroll.is-revealed {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js-ready .reveal-on-scroll {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

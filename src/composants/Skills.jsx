@@ -24,15 +24,15 @@ function Skills() {
       aria-labelledby="skills-title"
     >
       <div className="section-heading reveal-on-scroll">
-        <p className="section-kicker">Mes outils</p>
-        <h2 id="skills-title">Les technologies derrière mes interfaces.</h2>
+        <p className="section-kicker">Compétences techniques</p>
+        <h2 id="skills-title">Les technologies que je maîtrise.</h2>
         <p className="section-intro">
-          Les outils que j'utilise pour donner vie à vos idées.
+          Les outils que j’utilise pour concevoir et développer vos interfaces.
         </p>
       </div>
 
       <div className="skills-marquee-caption" aria-hidden="true">
-        <span>Ma boîte à outils</span>
+        <span>Stack technique</span>
         <span>{String(skills.length).padStart(2, "0")} technologies</span>
       </div>
       <div

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Formulaire() {
+function Formulaire({ className = "" }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -16,13 +16,13 @@ function Formulaire() {
 
   return (
     <form
-      className="contact-form"
+      className={`contact-form ${className}`.trim()}
       onSubmit={handleSubmit}
       aria-describedby="contact-form-note"
     >
       <div className="contact-form-heading">
         <h3>Parlons de votre projet</h3>
-        <p>Quelques détails suffisent pour commencer.</p>
+        <p>Décrivez votre besoin en quelques lignes.</p>
       </div>
       <label htmlFor="contact-name">Votre nom</label>
       <input
@@ -30,7 +30,7 @@ function Formulaire() {
         name="name"
         type="text"
         autoComplete="name"
-        placeholder="Name"
+        placeholder="Votre nom"
         value={name}
         onChange={(event) => setName(event.target.value)}
         required

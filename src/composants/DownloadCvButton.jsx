@@ -7,9 +7,9 @@ function DownloadCvButton({ onClick }) {
       href={cvUrl}
       download="CV_BAGNAN_2026.pdf"
       onClick={onClick}
-      aria-label="Télécharger le CV de Lemuel"
+      aria-label="Télécharger mon CV — PDF de Bagnan Lemuel"
     >
-      Demander mon CV <span aria-hidden="true">↗</span>
+      Télécharger mon CV <span aria-hidden="true">↗</span>
     </a>
   );
 }

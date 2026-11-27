@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lemuelbagnan40-lab.github.io/Portefolio/sitemap.xml

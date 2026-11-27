@@ -40,7 +40,7 @@
 .contact-email {
   display: grid;
   gap: 3px;
-  color: var(--accent);
+  color: var(--accent-ink);
   font-weight: 650;
 }
 
@@ -72,6 +72,35 @@
   font-weight: 600;
 }
 
+.copy-email {
+  display: inline-flex;
+  min-width: 168px;
+  min-height: 38px;
+  padding-inline: 14px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--text-primary);
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 160ms ease, border-color 160ms ease, background-color 160ms ease;
+}
+
+.copy-email:hover {
+  color: var(--accent);
+  background: rgba(var(--accent-rgb), 0.05);
+  border-color: rgba(var(--accent-rgb), 0.4);
+}
+
+.copy-email[data-copied="true"] {
+  color: var(--success);
+  border-color: currentColor;
+}
+
 .footer-bottom {
   width: min(100% - 48px, var(--content-width));
   margin-inline: auto;
@@ -99,16 +128,11 @@
   letter-spacing: -0.07em;
 }
 
-.footer-brand-name span {
-  color: var(--accent);
-}
-
 .footer-brand small {
   margin-top: 3px;
   color: var(--text-muted);
   font-size: 0.72rem;
   font-weight: 500;
-  letter-spacing: 0;
 }
 
 .footer-links {
@@ -137,13 +161,8 @@
 .footer-links a:hover,
 .footer-links a:focus-visible {
   color: var(--text-strong);
-  background: rgba(217, 102, 59, 0.06);
-  border-color: rgba(217, 102, 59, 0.4);
-}
-
-.footer-links a:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 3px;
+  background: rgba(var(--accent-rgb), 0.06);
+  border-color: rgba(var(--accent-rgb), 0.4);
 }
 
 .footer-links img {
@@ -153,7 +172,7 @@
 }
 
 .footer-links .social-icon--github {
-  filter: invert(78%) sepia(72%) saturate(421%) hue-rotate(105deg) brightness(96%) contrast(90%);
+  filter: var(--github-filter);
 }
 
 .back-to-top {
@@ -184,18 +203,12 @@
   justify-content: space-between;
   gap: 16px;
   border-top: 1px solid var(--line);
-  color: #95a198;
+  color: var(--text-muted);
   font-size: 0.76rem;
 }
 
 .footer-copy {
   margin: 0;
-}
-
-.footer-links a:hover,
-.footer-links a:focus-visible {
-  background: rgba(217, 102, 59, 0.06);
-  border-color: rgba(217, 102, 59, 0.4);
 }
 
 @media (max-width: 760px) {
@@ -236,6 +249,10 @@
     width: min(100% - 32px, 600px);
   }
 
+  .contact-section {
+    padding-block: 62px;
+  }
+
   .footer-main {
     padding-block: 18px;
     grid-template-columns: 1fr;
@@ -262,13 +279,10 @@
   .footer-legal {
     min-height: 46px;
   }
-
-  .contact-section {
-    padding-block: 62px;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .copy-email,
   .footer-links a,
   .back-to-top {
     transition: none;

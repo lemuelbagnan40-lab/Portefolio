@@ -1,6 +1,6 @@
 .services-container {
   padding: clamp(68px, 9vw, 108px) 24px;
-  background: var(--surface);
+  background: var(--surface-alt);
   border-block: 1px solid var(--line);
 }
 
@@ -54,7 +54,7 @@
 
 .card:hover {
   background: var(--card-hover);
-  border-color: rgba(217, 102, 59, 0.42);
+  border-color: rgba(var(--accent-rgb), 0.42);
   transform: translateY(-3px);
 }
 
@@ -79,14 +79,6 @@
   color: var(--text-muted);
   font-size: 0.92rem;
   line-height: 1.65;
-}
-
-.services-container {
-  background: #f4f2ed;
-}
-
-.card:hover {
-  border-color: rgba(217, 102, 59, 0.42);
 }
 
 @media (max-width: 760px) {

@@ -12,7 +12,7 @@ const services = [
   {
     title: "Design adaptatif",
     description:
-      "Une expérience agréable à consulter sur mobile, tablette et ordinateur.",
+      "Un affichage optimal sur mobile, tablette et ordinateur.",
   },
   {
     title: "Refonte et corrections",
@@ -33,17 +33,21 @@ function Services() {
       className="services-container"
       aria-labelledby="services-title"
     >
-      <div className="section-heading">
-        <p className="section-kicker">Ce que je fais</p>
-        <h2 id="services-title">De l’idée à une présence en ligne soignée.</h2>
+      <div className="section-heading reveal-on-scroll">
+        <p className="section-kicker">Mes services</p>
+        <h2 id="services-title">Des prestations adaptées à votre projet web.</h2>
         <p className="section-intro">
-          Un coup de main, de l’idée jusqu’aux finitions.
+          Un accompagnement clair, de l’idée à la mise en ligne.
         </p>
       </div>
 
       <div className="services-card">
         {services.map((service, index) => (
-          <article className="card" key={service.title}>
+          <article
+            className="card reveal-on-scroll"
+            key={service.title}
+            style={{ "--reveal-delay": `${(index % 3) * 80}ms` }}
+          >
             <span className="card-number" aria-hidden="true">
               {String(index + 1).padStart(2, "0")}
             </span>

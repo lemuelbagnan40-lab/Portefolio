@@ -9,7 +9,7 @@ const projects = [
       "Créer un parcours clair et progressif à destination des débutants francophones.",
     highlights: [
       "Parcours interactifs et progressifs",
-      "Navigation fluide et responsive",
+      "Navigation fluide et adaptée à tous les écrans",
       "Pensé pour l'apprentissage par la pratique",
     ],
     technologies: ["React", "Vite", "JavaScript", "CSS"],
